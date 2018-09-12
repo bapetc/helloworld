@@ -24,7 +24,7 @@ spec:
         ports:
         - containerPort: {{ .Values.service.internalPort }}
         env:
-        - name: SPRING_PROFILES_ACTIVE
+        - name: "SPRING_PROFILES_ACTIVE"
               valueFrom:
                 configMapKeyRef:
                   name: spring-boot-config
