@@ -23,6 +23,12 @@ spec:
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         ports:
         - containerPort: {{ .Values.service.internalPort }}
+        env:
+          - name: "SPRING_PROFILES_ACTIVE"
+          valueFrom:
+           configMapKeyRef:
+            name: spring-boot-config
+            key: spring.active.profile
         livenessProbe:
           httpGet:
             path: {{ .Values.probePath }}
