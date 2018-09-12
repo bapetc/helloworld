@@ -9,7 +9,7 @@ public class HelloWorld {
 
     @RequestMapping(method = RequestMethod.GET, path = "/hello")
     public String hello() {
-        return "Hello world 2XXXXXXXXX!";
+        return "Hello world 2XXXXXXXXX! " + System.getenv("SPRING_PROFILES_ACTIVE");
     }
 
 }
